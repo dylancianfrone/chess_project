@@ -9,7 +9,7 @@ The program takes data from the chess games dataset, which I first simplified by
 
 States were stored as strings, and translated into vectors for use with Pyspark ML. When initially using Linear Regression, mean error was around 0.3, which was disappointing. The issue was that since chess is so complex, around 90% of states only appeared in a small handful of games - under 20, even though the dataset had over 1 million games. This led to extreme win rates in over 85% of the original dataset (42% of gamestates had winrates under 0.1, and 45% had winrates over 0.9, both relative to the white player). Local-Sensitive Hashing (Minhashing) was used to combine similar states in the training set so that these winrates were less extreme. 
 
-A more detailed report is available in the repository [here].
+A more detailed report is available in the repository [here](report.pdf).
 ## Results
 
 After implementing LSH, mean absolute error was reduced to around 9%. This is to say, the system predicted the winrate of a previously unknown chess state with an average of +-9%. I found this satisfactory given the limited time (about 3 weeks, since it was the end of the semester) and the raw complexity of the game of chess.
@@ -19,5 +19,5 @@ After implementing LSH, mean absolute error was reduced to around 9%. This is to
    [Chess Games Dataset]: <https://www.kaggle.com/mariuszmackowski/teamfight-tactics-fates-challenger-euw-rank-games>
    [Pyspark ML]: <https://spark.apache.org/docs/2.3.1/api/python/pyspark.ml.html>
    [Pyspark]: <https://spark.apache.org/docs/latest/api/python/index.html>
-   [here]: (report.pdf)
+
    
